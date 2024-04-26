@@ -1,0 +1,49 @@
+<div class="container-login">
+    <div class="content-login">
+      <div class="info-login">
+        <div class="login">
+          <div class="container-card">
+            <div  class="form-card">
+              <div class="title">
+                <p>Log in</p>
+              </div>
+              <div class="input">
+                <input
+                  [ngClass]="userValid ? 'input' : 'input-error'"
+                  type="text"
+                  placeholder="Email"
+                  [(ngModel)]="email"
+                />
+                <p class="text-error" *ngIf="!userValid">
+                  Please check the email
+                </p>
+                <input
+                  [ngClass]="userValid ? 'input' : 'input-error'"
+                  type="password"
+                  placeholder="Password"
+                  [(ngModel)]="password"
+                />
+                <p class="text-error" *ngIf="!userValid">
+                  Please check the password
+                </p>
+              </div>
+              <div class="btn-login">
+                <button (click)="sendData()">Log in</button>
+              </div>
+              <div class="forgot">
+                <p
+                  (click)="
+                    changeView = 'reset';
+                    userValid = true;
+                    email = '';
+                    password = ''
+                  "
+                >
+                  Forgot your password?
+                </p>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
