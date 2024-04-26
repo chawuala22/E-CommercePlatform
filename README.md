@@ -2,6 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.10.
 
+## Important Settings
+```bash
+# Before running or viewing the frontend you must run the backend, it is in the following repository, https://github.com/chawuala22/tasks
+```
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
