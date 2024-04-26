@@ -7,9 +7,9 @@ import { CreateFruitComponent } from './create-fruit/create-fruit.component';
 import { NotFoundComponent } from '../components/not-found/not-found.component';
 import { PagesComponent } from './pages.component';
 import { HeaderComponent } from '../components/header/header.component';
-import { FooterComponent } from '../components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FruitDetailComponent } from './fruit-detail/fruit-detail.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,14 +19,15 @@ import { FruitDetailComponent } from './fruit-detail/fruit-detail.component';
     NotFoundComponent,
     PagesComponent,
     HeaderComponent,
-    FooterComponent,
     FruitDetailComponent
 
   ],
   imports: [
     CommonModule,
     PagesRoutingModule,
-    HttpClientModule	
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class PagesModule { }

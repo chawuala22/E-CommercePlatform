@@ -10,4 +10,5 @@ export interface Datum {
     description: string;
     img:         string;    
     category:    string;
+    status?:     string;
 }

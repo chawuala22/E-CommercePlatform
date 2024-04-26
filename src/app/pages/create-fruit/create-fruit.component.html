@@ -1,1 +1,48 @@
-<p>create-fruit works!</p>
+<div class="back">
+    back
+</div>
+<div class="container-create">
+    <div class="container-detail">
+        <div class="container-card">
+            <div class="card-img">
+                <img *ngIf="fruitForm.get('img')?.value" src="{{fruitForm.get('img')?.value}}" alt="">
+                <img *ngIf="!fruitForm.get('img')?.value"
+                    src="https://t3.ftcdn.net/jpg/04/60/01/36/360_F_460013622_6xF8uN6ubMvLx0tAJECBHfKPoNOR5cRa.jpg"
+                    alt="">
+            </div>
+            <div class="card-info">
+                <p>Title: {{fruitForm.get('title')?.value}}</p>
+                <p>Price: {{fruitForm.get('price')?.value | currency}}</p>
+                <p>Description: {{fruitForm.get('description')?.value}}</p>
+                <p>Category: {{fruitForm.get('category')?.value}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="container-form">
+        <form [formGroup]="fruitForm" (submit)="sendData()">
+            <div class="input">
+                <label>Title</label>
+                <input formControlName="title" type="text">
+            </div>
+            <div class="input">
+                <label>Price</label>
+                <input formControlName="price" type="number">
+            </div>
+            <div class="input">
+                <label>Description</label>
+                <input formControlName="description" type="text">
+            </div>
+            <div class="input">
+                <label>Category</label>
+                <input formControlName="category" type="text">
+            </div>
+            <div class="input">
+                <label>Image</label>
+                <input formControlName="img" type="text">
+            </div>
+            <div class="btn-send">
+                <button class="btn-create" type="submit">Create</button>
+            </div>
+        </form>
+    </div>
+</div>
