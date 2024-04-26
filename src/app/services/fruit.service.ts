@@ -6,7 +6,7 @@ import { Datum, ResultFruit } from '../models/fruit';
   providedIn: 'root'
 })
 export class FruitService {
-  urlBase: string = 'http://localhost:3000/'
+  urlBase: string = 'https://tasks-pearl.vercel.app/'
   constructor(private _httpClient: HttpClient) { }
 
   getAllFruits() {
@@ -26,6 +26,6 @@ export class FruitService {
   }
 
   updateFruit(id: string, data: Datum) {
-    return this._httpClient.put<Datum>(`${this.urlBase}fruit/${id}`, data);
+    return this._httpClient.patch<Datum>(`${this.urlBase}fruit/${id}`, data);
   }
 }

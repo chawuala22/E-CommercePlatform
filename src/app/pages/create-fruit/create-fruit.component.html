@@ -1,5 +1,8 @@
-<div class="back">
-    back
+<div routerLink="/" class="back">
+    <img src="https://cdn.iconscout.com/icon/free/png-256/free-back-arrow-1767507-1502574.png?f=webp" alt="">
+</div>
+<div class="title">
+    <h1>Create your fruit</h1>
 </div>
 <div class="container-create">
     <div class="container-detail">
@@ -23,22 +26,30 @@
             <div class="input">
                 <label>Title</label>
                 <input formControlName="title" type="text">
+                <p *ngIf="fruitForm.get('title')?.hasError('required') && fruitForm.get('title')?.touched">Field required</p>
             </div>
             <div class="input">
                 <label>Price</label>
                 <input formControlName="price" type="number">
+                <p *ngIf="fruitForm.get('price')?.hasError('required') && fruitForm.get('price')?.touched">Field required</p>
+
             </div>
             <div class="input">
                 <label>Description</label>
                 <input formControlName="description" type="text">
+                <p *ngIf="fruitForm.get('description')?.hasError('required') && fruitForm.get('description')?.touched">Field required</p>
+
             </div>
             <div class="input">
                 <label>Category</label>
                 <input formControlName="category" type="text">
+                <p *ngIf="fruitForm.get('category')?.hasError('required') && fruitForm.get('category')?.touched">Field required</p>
+
             </div>
             <div class="input">
                 <label>Image</label>
-                <input formControlName="img" type="text">
+                <input (input)="validateImage()" formControlName="img" type="text">
+                <p *ngIf="fruitForm.get('img')?.hasError('required') && fruitForm.get('img')?.touched" >Field required</p>
             </div>
             <div class="btn-send">
                 <button class="btn-create" type="submit">Create</button>

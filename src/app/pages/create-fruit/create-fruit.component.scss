@@ -1,7 +1,7 @@
 .container-create {
     display: grid;
-    grid-template-rows: auto;
-    gap: 2%;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
     padding: 1%;
 }
 
@@ -17,7 +17,6 @@
     .container-card {
         display: flex;
         flex-direction: column;
-        box-shadow: 4px 4px 25px #dcdfec;
         border-radius: 1rem;
 
         .card-img {
@@ -74,12 +73,18 @@
                 border-radius: 1rem;
                 outline: none;
             }
+
+            p {
+                color: red;
+                margin: 0;
+            }
         }
 
         .btn-send {
             display: flex;
             justify-content: flex-end;
             width: 100%;
+
             .btn-create {
                 border-radius: 25px;
                 padding: 0%;
@@ -97,9 +102,16 @@
     }
 }
 
-@media screen and (min-width: 995px) {
-    .container-create {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
+.back {
+    display: flex;
+    cursor: pointer;
+
+    img {
+        width: 3%;
+        object-fit: contain;
     }
+}
+
+.title {
+    padding-left: 1%;
 }

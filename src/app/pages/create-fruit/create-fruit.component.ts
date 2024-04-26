@@ -27,22 +27,32 @@ export class CreateFruitComponent implements OnInit {
       img: ['', [Validators.required]]
     });
   }
+
+  validateImage() {
+    const text = this.fruitForm.get('img')?.value;
+    console.log(text);
+    if (!text.includes('png') && text !== '') {
+      Swal.fire('Only png images')
+    }
+  }
   sendData() {
-    console.log(this.fruitForm.value);
+    if (this.fruitForm.valid) {
 
-    this._serviceFruit.postFruit(this.fruitForm.value).subscribe({
-      next: (data) => {
-        if (data.status == 'ok') {
-          Swal.fire('Successfully created');
-          setTimeout(() => {
-            this.router.navigate(['/']);
-          }, 2000);
+      this._serviceFruit.postFruit(this.fruitForm.value).subscribe({
+        next: (data) => {
+          if (data.status == 'ok') {
+            Swal.fire('Successfully created');
+            setTimeout(() => {
+              this.router.navigate(['/']);
+            }, 2000);
+          }
+        },
+        error: (err) => {
+          console.log(err);
         }
-      },
-      error: (err) => {
-        console.log(err);
-      }
-    })
-
+      });
+    } else {
+      this.fruitForm.markAllAsTouched();
+    }
   }
 }

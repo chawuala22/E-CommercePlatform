@@ -16,7 +16,7 @@ export class LoginComponent {
   constructor(private _authService: AuthService, private router: Router) { }
 
   sendData() {
-    if (this.email === 'email@iasv5.com' && this.password === 'Admin123') {
+    if (this.email === 'email@linktic.com' && this.password === 'Admin123') {
       this._authService.login();
       this.router.navigate(['/']);
     } else {

@@ -2,10 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.10.
 
-## Important Settings
-```bash
-# Before running or viewing the frontend you must run the backend, it is in the following repository, https://github.com/chawuala22/tasks
-```
+
+## Credentials
+user: email@linktic.com
+password: Admin123
 
 ## Development server
 

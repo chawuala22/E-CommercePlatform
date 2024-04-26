@@ -27,22 +27,31 @@ export class HomeComponent implements OnInit {
         }
       },
       error: (err) => {
-        Swal.fire('Before running or viewing the frontend you must run the backend, it is in the following repository, https://github.com/chawuala22/tasks')
         console.log(err);
       }
     })
   }
 
   deleteFruit(id: string) {
-    this._serviceFruit.deleteFruit(id).subscribe({
-      next: (data) => {
-        console.log(data);
-        this.getAllFruits();
-      },
-      error: (err) => {
-        console.log(err);
+    Swal.fire({
+      title: "Do you want to delete the fruit?",
+      showDenyButton: true,
+      confirmButtonText: "Delete",
+      denyButtonText: `Cancel`
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this._serviceFruit.deleteFruit(id).subscribe({
+          next: (data) => {
+            console.log(data);
+            this.getAllFruits();
+          },
+          error: (err) => {
+            console.log(err);
+          }
+        })
+      } else if (result.isDenied) {
       }
-    })
+    });
   }
 
 }
