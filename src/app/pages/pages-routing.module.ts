@@ -5,6 +5,7 @@ import { PagesComponent } from './pages.component';
 import { NotFoundComponent } from '../components/not-found/not-found.component';
 import { AuthGuard } from '../auth/auth.guard';
 import { CreateFruitComponent } from './create-fruit/create-fruit.component';
+import { FruitDetailComponent } from './fruit-detail/fruit-detail.component';
 
 const routes: Routes = [
   {
@@ -20,7 +21,10 @@ const routes: Routes = [
         path: 'create-fruit',
         component: CreateFruitComponent,
       },
-
+      {
+        path: 'detail/:id',
+        component: FruitDetailComponent
+      },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
     ],
   },

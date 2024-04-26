@@ -9,6 +9,7 @@ import { PagesComponent } from './pages.component';
 import { HeaderComponent } from '../components/header/header.component';
 import { FooterComponent } from '../components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FruitDetailComponent } from './fruit-detail/fruit-detail.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     NotFoundComponent,
     PagesComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    FruitDetailComponent
 
   ],
   imports: [

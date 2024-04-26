@@ -1,0 +1,21 @@
+<div class="container-home">
+    <div class="container-title">
+        <h2>Welcome E-Commerce Platform</h2>
+    </div>
+    <div class="container-content">
+        <div *ngFor="let fruit of fruitsArray" class="container-card">
+            <div class="card-img">
+                <img src="{{fruit.img}}" alt="">
+            </div>
+            <div class="card-info">
+                <p>{{fruit.title}}</p>
+                <p>{{fruit.description}}</p>
+                <p>{{fruit.price | currency}} </p>
+            </div>
+            <div class="buttons-actions">
+                <button [routerLink]="['/detail', fruit.id]" class="detail">Detail</button>
+                <button (click)="deleteFruit(fruit.id)" class="delete">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -13,6 +13,10 @@ export class FruitService {
     return this._httpClient.get<ResultFruit>(`${this.urlBase}fruit`);
   }
 
+  getFruitById(id: string | undefined) {
+    return this._httpClient.get<ResultFruit>(`${this.urlBase}fruit/${id}`);
+  }
+
   postFruit(data: Datum) {
     return this._httpClient.post<Datum>(`${this.urlBase}fruit`, data);
   }

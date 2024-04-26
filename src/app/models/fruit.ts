@@ -8,5 +8,6 @@ export interface Datum {
     title:       string;
     price:       number;
     description: string;
+    img:         string;    
     category:    string;
 }
