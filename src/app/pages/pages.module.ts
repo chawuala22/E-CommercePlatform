@@ -8,6 +8,7 @@ import { NotFoundComponent } from '../components/not-found/not-found.component';
 import { PagesComponent } from './pages.component';
 import { HeaderComponent } from '../components/header/header.component';
 import { FooterComponent } from '../components/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { FooterComponent } from '../components/footer/footer.component';
   imports: [
     CommonModule,
     PagesRoutingModule,
+    HttpClientModule	
   ]
 })
 export class PagesModule { }
